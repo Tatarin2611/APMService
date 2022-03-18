@@ -1,0 +1,407 @@
+﻿<Window
+    x:Class="APMService.WindowFolder.ClientRole.WindowClient"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:APMService.WindowFolder.ClientRole"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:pu="clr-namespace:Panuon.UI.Silver;assembly=Panuon.UI.Silver"
+    Width="600"
+    Height="740"
+x:Name="ClientWindow"
+    AllowsTransparency="True"
+    Background="Transparent"
+    MinWidth="600"
+    MinHeight="740"
+    
+    BorderBrush="#FF272727"
+    Foreground="Transparent"
+    Icon="/APMService;component/ResourcesFolder/Image/Icons.ico"
+    ResizeMode="NoResize"
+    WindowStartupLocation="CenterScreen"
+    WindowStyle="None"
+    mc:Ignorable="d">
+
+
+    <WindowChrome.WindowChrome>
+        <WindowChrome CaptionHeight="0" ResizeBorderThickness="5" />
+    </WindowChrome.WindowChrome>
+    <Grid Background="#FF272727">
+
+
+
+        <Image
+            Height="135"
+            Margin="0,30,0,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            Source="/APMService;component/ResourcesFolder/Image/Logotip.png" />
+        <Grid
+            x:Name="GridTopPanel"
+            Height="27"
+            Margin="0"
+            VerticalAlignment="Top"
+            Background="#FF272727"
+            MouseDown="GridTopPanel_MouseDown">
+            <Button
+                x:Name="ButtonClose"
+                Width="37"
+                Height="27"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Top"
+                pu:ButtonHelper.HoverBrush="#B44654"
+                Background="Transparent"
+                Click="ButtonClose_Click"
+                ToolTip="Закрыть">
+                <materialDesign:PackIcon Kind="Close" Opacity="0.6" />
+            </Button>
+            <Button
+                x:Name="ButtonWindowMinimize"
+                Width="37"
+                Height="27"
+                Margin="0,0,74,0"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Top"
+                Background="Transparent"
+                Click="ButtonWindowMinimize_Click"
+                ToolTip="Свернуть">
+                <materialDesign:PackIcon Kind="WindowMinimize" Opacity="0.6" />
+            </Button>
+            <Button
+                x:Name="ButtonWindowMaximize"
+                Width="37"
+                Height="27"
+                Margin="0,0,37,0"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Top"
+                Background="Transparent"
+                Click="ButtonWindowMaximize_Click"
+                ToolTip="Развернуть">
+                <materialDesign:PackIcon Kind="WindowMaximize" Opacity="0.6" />
+            </Button>
+        </Grid>
+        <StackPanel Margin="0,200,0,0">
+            <Grid>
+                <StackPanel x:Name="StackPanelOne" Visibility="Hidden">
+                    <Label
+                        x:Name="LabelHeaderOne"
+                        Height="40"
+                        Margin="0,20,0,0"
+                        HorizontalContentAlignment="Center"
+                        VerticalContentAlignment="Center"
+                        Content="ЗАЯВКА НА РЕМОНТ ОБОРУДОВАНИЯ"
+                        FontFamily="/Project;component/ResourcesFolder/FontFamily/#Roboto Thin"
+                        FontSize="22"
+                        Foreground="White"
+                        Opacity="0.9" />
+                    <TextBlock
+                        
+                        Height="40"
+                        Margin="0,25,0,0"
+                        FontFamily="/Project;component/ResourcesFolder/FontFamily/#Roboto Thin"
+                        FontSize="16"
+                        Foreground="White"
+                        Opacity="0.6"
+                        TextAlignment="Center"
+                        TextWrapping="Wrap"><Run Text="Конкретно опишите суть вашей проблемы" />
+                    </TextBlock>
+                    <TextBox
+                        x:Name="TextBoxDescription"
+                        Width="400"
+                        Height="150"
+                        Margin="0,20,0,0"
+                        Padding="25,25,25,25"
+                        HorizontalContentAlignment="Center"
+                        VerticalContentAlignment="top"
+                        pu:TextBoxHelper.CornerRadius="2"
+                        pu:TextBoxHelper.FocusedBorderBrush="#606B74"
+                        pu:TextBoxHelper.FocusedShadowColor="#B5B5B5"
+                        pu:TextBoxHelper.Watermark="Опишите вашу проблему"
+                        AcceptsReturn="True"
+                        Background="#FF333435"
+                        BorderBrush="#FF333435"
+                        CharacterCasing="Normal"
+                        FontFamily="/Project;component/ResourcesFolder/FontFamily/#Roboto Light"
+                        Foreground="White"
+                        Opacity="2"
+                        Text="{Binding Description}"
+                        TextWrapping="Wrap" />
+                    <StackPanel Margin="0,20,0,0" Orientation="Vertical">
+                        <Button
+                            x:Name="ButtonNextTwo"
+                            Width="400"
+                            Height="40"
+                            Margin="0,0,0,0"
+                            HorizontalAlignment="Center"
+                            pu:ButtonHelper.ClickCoverOpacity="0.9"
+                            pu:ButtonHelper.ClickStyle="Sink"
+                            pu:ButtonHelper.HoverBrush="#FF4098A1"
+                            BorderBrush="#FF484D52"
+                            BorderThickness="1.5"
+                            Click="ButtonNextTwo_Click"
+                            Content="Далее"
+                            FontFamily="/PageProject;component/FontFamilyFolder/#Roboto Medium"
+                            FontSize="15.5"
+                            ToolTip="Далее">
+                            <Button.Background>
+                                <LinearGradientBrush MappingMode="Absolute" Opacity="0.7" StartPoint="300,100" EndPoint="100,100">
+                                    <GradientStop Color="#44ABB6" />
+                                    <GradientStop Offset="1" Color="#FF4FACB6" />
+                                </LinearGradientBrush>
+                            </Button.Background>
+                            <Button.Foreground>
+                                <SolidColorBrush Opacity="0.6" Color="White" />
+                            </Button.Foreground>
+                        </Button>
+                        <Button
+                            x:Name="ButtonCancelAuthorization"
+                            Width="400"
+                            Height="40"
+                            Margin="0,15,0,0"
+                            HorizontalAlignment="Center"
+                            pu:ButtonHelper.ClickCoverOpacity="0.9"
+                            pu:ButtonHelper.ClickStyle="Sink"
+                            pu:ButtonHelper.HoverBrush="Transparent"
+                            BorderBrush="#FF484D52"
+                            BorderThickness="0"
+                            Click="ButtonCancelAuthorization_Click"
+                            Content="Закрыть"
+                            FontFamily="/PageProject;component/FontFamilyFolder/#Roboto Medium"
+                            FontSize="15.5"
+                            ToolTip="Закрыть">
+                            <Button.Background>
+                                <LinearGradientBrush MappingMode="Absolute" Opacity="0.7" StartPoint="300,100" EndPoint="100,100">
+                                    <GradientStop Color="Transparent" />
+                                    <GradientStop Offset="1" Color="Transparent" />
+                                </LinearGradientBrush>
+                            </Button.Background>
+                            <Button.Foreground>
+                                <SolidColorBrush Opacity="0.2" Color="White" />
+                            </Button.Foreground>
+                        </Button>
+                    </StackPanel>
+
+                </StackPanel>
+                <StackPanel x:Name="StackPanelThree" Visibility="Hidden">
+                    <Label
+                        Height="40"
+                        Margin="0,20,0,0"
+                        HorizontalContentAlignment="Center"
+                        VerticalContentAlignment="Center"
+                        Content="ЗАЯВКА НА РЕМОНТ ОБОРУДОВАНИЯ"
+                        FontFamily="/Project;component/ResourcesFolder/FontFamily/#Roboto Thin"
+                        FontSize="22"
+                        Foreground="White"
+                        Opacity="0.9" />
+                    <TextBlock
+                        Height="40"
+                        Margin="0,25,0,0"
+                        FontFamily="/Project;component/ResourcesFolder/FontFamily/#Roboto Thin"
+                        FontSize="16"
+                        Foreground="White"
+                        Opacity="0.6"
+                        TextAlignment="Center"
+                        TextWrapping="Wrap"><Run Text="Выберите серийный номер оборудования" />
+                        <LineBreak />
+
+                    </TextBlock>
+                   
+                    <ComboBox
+                        x:Name="ComboBoxSeriaEquipment"
+                        Width="400"
+                        Height="40"
+                        Margin="0,15,0,0"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        HorizontalContentAlignment="Center"
+                        VerticalContentAlignment="Center"
+                        pu:ComboBoxHelper.HoverBackground="#FF3C3C3C"
+                        pu:ComboBoxHelper.SelectedBackground="#FF333435"
+                        pu:ComboBoxHelper.ShadowColor="#B5B5B5"
+                        pu:ComboBoxHelper.Watermark="Выберите серийный номер"
+                        pu:IconHelper.Foreground="#ADAEAE"
+                        Background="#FF333435"
+                        BorderBrush="#FF333435"
+                        DisplayMemberPath="SeriaEquipment"
+                        FontFamily="/Project;component/ResourcesFolder/FontFamily/#Roboto Light"
+                        Foreground="White"
+                        Opacity="2"
+                        SelectedItem="{Binding Equipment}" />
+
+
+                    <StackPanel Margin="0,20,0,0" Orientation="Vertical">
+                        <Button
+                            x:Name="ButtonNextFour"
+                            Width="400"
+                            Height="40"
+                            Margin="0,0,0,0"
+                            HorizontalAlignment="Center"
+                            pu:ButtonHelper.ClickCoverOpacity="0.9"
+                            pu:ButtonHelper.ClickStyle="Sink"
+                            pu:ButtonHelper.HoverBrush="#FF4098A1"
+                            BorderBrush="#FF484D52"
+                            BorderThickness="1.5"
+                            Click="ButtonNextFour_Click"
+                            Content="Далее"
+                            FontFamily="/PageProject;component/FontFamilyFolder/#Roboto Medium"
+                            FontSize="15.5"
+                            ToolTip="Далее">
+                            <Button.Background>
+                                <LinearGradientBrush MappingMode="Absolute" Opacity="0.7" StartPoint="300,100" EndPoint="100,100">
+                                    <GradientStop Color="#44ABB6" />
+                                    <GradientStop Offset="1" Color="#FF4FACB6" />
+                                </LinearGradientBrush>
+                            </Button.Background>
+                            <Button.Foreground>
+                                <SolidColorBrush Opacity="0.6" Color="White" />
+                            </Button.Foreground>
+                        </Button>
+                        <Button
+                            x:Name="ButtonLeaveTwo"
+                            Width="400"
+                            Height="40"
+                            Margin="0,15,0,0"
+                            HorizontalAlignment="Center"
+                            pu:ButtonHelper.ClickCoverOpacity="0.9"
+                            pu:ButtonHelper.ClickStyle="Sink"
+                            pu:ButtonHelper.HoverBrush="Transparent"
+                            BorderBrush="#FF484D52"
+                            BorderThickness="0"
+                            Click="ButtonLeaveTwo_Click"
+                            Content="Назад"
+                            FontFamily="/PageProject;component/FontFamilyFolder/#Roboto Medium"
+                            FontSize="15.5"
+                            ToolTip="Назад">
+                            <Button.Background>
+                                <LinearGradientBrush MappingMode="Absolute" Opacity="0.7" StartPoint="300,100" EndPoint="100,100">
+                                    <GradientStop Color="Transparent" />
+                                    <GradientStop Offset="1" Color="Transparent" />
+                                </LinearGradientBrush>
+                            </Button.Background>
+                            <Button.Foreground>
+                                <SolidColorBrush Opacity="0.2" Color="White" />
+                            </Button.Foreground>
+                        </Button>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel x:Name="StackPanelFour" Visibility="Visible">
+                    <Label
+                        Height="40"
+                        Margin="0,20,0,0"
+                        HorizontalContentAlignment="Center"
+                        VerticalContentAlignment="Center"
+                        Content="ЗАЯВКА НА РЕМОНТ ОБОРУДОВАНИЯ"
+                        FontFamily="/Project;component/ResourcesFolder/FontFamily/#Roboto Thin"
+                        FontSize="22"
+                        Foreground="White"
+                        Opacity="0.9" />
+                    <TextBlock
+                        Height="40"
+                        Margin="0,25,0,0"
+                        FontFamily="/Project;component/ResourcesFolder/FontFamily/#Roboto Thin"
+                        FontSize="16"
+                        Foreground="White"
+                        Opacity="0.6"
+                        TextAlignment="Center"
+                        TextWrapping="Wrap"><Run Text="Выберите вашу фамилию, и  дату оформления заявки " />
+                        <LineBreak />
+
+                    </TextBlock>
+                    <ComboBox
+                        x:Name="ComboBoxLastNameClient"
+                        Width="400"
+                        Height="40"
+                        Margin="0,15,0,0"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        HorizontalContentAlignment="Center"
+                        VerticalContentAlignment="Center"
+                        pu:ComboBoxHelper.HoverBackground="#FF3C3C3C"
+                        pu:ComboBoxHelper.SelectedBackground="#FF333435"
+                        pu:ComboBoxHelper.ShadowColor="#B5B5B5"
+                        pu:ComboBoxHelper.Watermark="Выберите фамилию"
+                        pu:IconHelper.Foreground="#ADAEAE"
+                        Background="#FF333435"
+                        BorderBrush="#FF333435"
+                        DisplayMemberPath="LastNameStaff"
+                        FontFamily="/Project;component/ResourcesFolder/FontFamily/#Roboto Light"
+                        Foreground="White"
+                        Opacity="2"
+                        SelectedItem="{Binding Staff}" />
+
+                    <StackPanel Margin="0,20,0,0" Orientation="Vertical">
+                        <Button
+                            x:Name="ButtonAddOrder"
+                            Width="400"
+                            Height="40"
+                            Margin="0,0,0,0"
+                            HorizontalAlignment="Center"
+                            pu:ButtonHelper.ClickCoverOpacity="0.9"
+                            pu:ButtonHelper.ClickStyle="Sink"
+                            pu:ButtonHelper.HoverBrush="#FF4098A1"
+                            BorderBrush="#FF484D52"
+                            BorderThickness="1.5"
+                            Click="ButtonAddOrder_Click"
+                            Content="Отправить заявку"
+                            FontFamily="/PageProject;component/FontFamilyFolder/#Roboto Medium"
+                            FontSize="15.5"
+                            ToolTip="Отправить заявку">
+                            <Button.Background>
+                                <LinearGradientBrush MappingMode="Absolute" Opacity="0.7" StartPoint="300,100" EndPoint="100,100">
+                                    <GradientStop Color="#44ABB6" />
+                                    <GradientStop Offset="1" Color="#FF4FACB6" />
+                                </LinearGradientBrush>
+                            </Button.Background>
+                            <Button.Foreground>
+                                <SolidColorBrush Opacity="0.6" Color="White" />
+                            </Button.Foreground>
+                        </Button>
+                        <Button
+                            x:Name="ButtonLeaveThree"
+                            Width="400"
+                            Height="40"
+                            Margin="0,15,0,0"
+                            HorizontalAlignment="Center"
+                            pu:ButtonHelper.ClickCoverOpacity="0.9"
+                            pu:ButtonHelper.ClickStyle="Sink"
+                            pu:ButtonHelper.HoverBrush="Transparent"
+                            BorderBrush="#FF484D52"
+                            BorderThickness="0"
+                            Click="ButtonLeaveThree_Click"
+                            Content="Назад"
+                            FontFamily="/PageProject;component/FontFamilyFolder/#Roboto Medium"
+                            FontSize="15.5"
+                            ToolTip="Назад">
+                            <Button.Background>
+                                <LinearGradientBrush MappingMode="Absolute" Opacity="0.7" StartPoint="300,100" EndPoint="100,100">
+                                    <GradientStop Color="Transparent" />
+                                    <GradientStop Offset="1" Color="Transparent" />
+                                </LinearGradientBrush>
+                            </Button.Background>
+                            <Button.Foreground>
+                                <SolidColorBrush Opacity="0.2" Color="White" />
+                            </Button.Foreground>
+                        </Button>
+                    </StackPanel>
+                </StackPanel>
+
+            </Grid>
+        </StackPanel>
+        <Border
+            x:Name="BorderBlur"
+            Grid.RowSpan="3"
+            Grid.ColumnSpan="6"
+            Width="auto"
+            Height="auto"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Stretch"
+            Background="#FF1F1F1F"
+            Opacity="0.60"
+            Visibility="Hidden">
+            <Border.Effect>
+                <BlurEffect Radius="1" />
+            </Border.Effect>
+        </Border>
+    </Grid>
+</Window>

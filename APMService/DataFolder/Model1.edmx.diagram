@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="9dff899aa5b040cb87fd0c886f336903" Name="Diagram1">
+        <EntityTypeShape EntityType="APMServiceModel.Equipment" Width="1.5" PointX="5.25" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="APMServiceModel.Manufacturer" Width="1.5" PointX="3" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="APMServiceModel.NumberOffice" Width="1.5" PointX="3" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="APMServiceModel.Order" Width="1.5" PointX="7.5" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="APMServiceModel.OrderStatus" Width="1.5" PointX="5.25" PointY="13.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="APMServiceModel.Roles" Width="1.5" PointX="0.75" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="APMServiceModel.Staff" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="APMServiceModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="APMServiceModel.TypeEquipment" Width="1.5" PointX="3" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="APMServiceModel.Users" Width="1.5" PointX="3" PointY="1.25" IsExpanded="true" />
+        <AssociationConnector Association="APMServiceModel.FK_Equipment_Manufacturer" ManuallyRouted="false" />
+        <AssociationConnector Association="APMServiceModel.FK_Equipment_TypeEquipment" ManuallyRouted="false" />
+        <AssociationConnector Association="APMServiceModel.FK_Order_Equipment" ManuallyRouted="false" />
+        <AssociationConnector Association="APMServiceModel.FK_Staff_NumberOffice" ManuallyRouted="false" />
+        <AssociationConnector Association="APMServiceModel.FK_Order_OrderStatus" ManuallyRouted="false" />
+        <AssociationConnector Association="APMServiceModel.FK_Order_Staff" ManuallyRouted="false" />
+        <AssociationConnector Association="APMServiceModel.FK_Users_Roles" ManuallyRouted="false" />
+        <AssociationConnector Association="APMServiceModel.FK_Staff_Users" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

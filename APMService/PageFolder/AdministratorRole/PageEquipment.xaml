@@ -1,0 +1,351 @@
+﻿<Page
+    x:Class="APMService.PageFolder.AdministratorRole.PageEquipment"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:APMService.PageFolder.AdministratorRole"
+     xmlns:Silver="clr-namespace:Panuon.UI.Silver;assembly=Panuon.UI.Silver"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:pu="clr-namespace:Panuon.UI.Silver;assembly=Panuon.UI.Silver"
+    Title="Users"
+    d:DesignHeight="645"
+    d:DesignWidth="1160"
+    mc:Ignorable="d">
+    <Grid>
+
+        <TabControl
+            Width="auto"
+            Height="auto"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Stretch"
+            Silver:TabControlHelper.SelectedForeground="#C44A59"
+            Silver:TabControlHelper.TabControlStyle="Standard"
+            Background="Transparent"
+            BorderBrush="#FF3C3C3C"
+            Foreground="White">
+
+            <TabItem
+                x:Name="TabItemEquipment"
+                Width="176"
+                FontFamily="/APM;component/ResourcesFolder/FontFamily/#Roboto"
+                FontSize="18"
+                Header="Оборудование">
+
+                <Grid
+                    Width="auto"
+                    Height="auto"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Stretch">
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0.1*" />
+                        <RowDefinition Height="0.1*" />
+                        <RowDefinition />
+
+                    </Grid.RowDefinitions>
+                    <TextBox
+                        x:Name="TextBoxSearchUsers"
+                        Grid.Row="0"
+                        Width="300"
+                        Height="40"
+                        Padding="15,0,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center"
+                        HorizontalContentAlignment="Left"
+                        VerticalContentAlignment="Center"
+                        pu:IconHelper.Foreground="#ADAEAE"
+                        pu:TextBoxHelper.FocusedBorderBrush="#606B74"
+                        pu:TextBoxHelper.FocusedShadowColor="#B5B5B5"
+                        pu:TextBoxHelper.Icon="&#xf002;"
+                        pu:TextBoxHelper.Watermark="Поиск"
+                        Background="Transparent"
+                        BorderBrush="#FF3C3C3C"
+                        CharacterCasing="Normal"
+                        FontFamily="/Project;component/ResourcesFolder/FontFamily/#Roboto Light"
+                        Foreground="White"
+                        MaxLength="25"
+                        Opacity="2"
+                        TextChanged="TextBoxSearch_TextChanged" />
+                    <Button
+                        x:Name="ButtonDeletetUsers"
+                        Grid.Row="0"
+                        Width="150"
+                        Height="40"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Center"
+                        pu:ButtonHelper.ClickCoverOpacity="0.9"
+                        pu:ButtonHelper.ClickStyle="Sink"
+                        pu:ButtonHelper.HoverBrush="#FF333435"
+                        BorderBrush="#FF3C3C3C"
+                        BorderThickness="1.5"
+                        Click="ButtonDeletet_Click"
+                        FontFamily="/PageProject;component/FontFamilyFolder/#Roboto Medium"
+                        FontSize="15.5"
+                        ToolTip="Удалить">
+                        <StackPanel
+                            Width="150"
+                            Height="38"
+                            Opacity="0.9"
+                            Orientation="Horizontal">
+                            <materialDesign:PackIcon
+                                Width="27"
+                                Height="40"
+                                Margin="3,0,0,0"
+                                HorizontalAlignment="Left"
+                                Kind="Delete" />
+                            <Label
+                                x:Name="LabelDelete"
+                                Margin="13,0,0,0"
+                                HorizontalAlignment="Center"
+                                VerticalContentAlignment="Center"
+                                Content="Удалить"
+                                Foreground="White" />
+                        </StackPanel>
+                        <Button.Background>
+                            <LinearGradientBrush MappingMode="Absolute" Opacity="0.7" StartPoint="300,100" EndPoint="100,100">
+                                <GradientStop Color="Transparent" />
+                                <GradientStop Offset="1" Color="Transparent" />
+                            </LinearGradientBrush>
+                        </Button.Background>
+                        <Button.Foreground>
+                            <SolidColorBrush Opacity="0.9" Color="White" />
+                        </Button.Foreground>
+                    </Button>
+                    <Button
+                        x:Name="ButtonAdd"
+                        Grid.Row="0"
+                        Width="150"
+                        Height="40"
+                        Margin="0,0,180,0"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Center"
+                        pu:ButtonHelper.ClickCoverOpacity="0.9"
+                        pu:ButtonHelper.ClickStyle="Sink"
+                        pu:ButtonHelper.HoverBrush="#FF333435"
+                        BorderBrush="#FF3C3C3C"
+                        BorderThickness="1.5"
+                        Click="ButtonAdd_Click"
+                        FontFamily="/PageProject;component/FontFamilyFolder/#Roboto Medium"
+                        FontSize="15.5"
+                        ToolTip="Добавить">
+                        <StackPanel
+                            Width="150"
+                            Height="38"
+                            Opacity="0.9"
+                            Orientation="Horizontal">
+                            <materialDesign:PackIcon
+                                Width="27"
+                                Height="40"
+                                Margin="3,0,0,0"
+                                HorizontalAlignment="Left"
+                                Kind="Add" />
+                            <Label
+                                Margin="8,0,0,0"
+                                HorizontalAlignment="Center"
+                                VerticalContentAlignment="Center"
+                                Content="Добавить"
+                                Foreground="White" />
+                        </StackPanel>
+                        <Button.Background>
+                            <LinearGradientBrush MappingMode="Absolute" Opacity="0.7" StartPoint="300,100" EndPoint="100,100">
+                                <GradientStop Color="Transparent" />
+                                <GradientStop Offset="1" Color="Transparent" />
+                            </LinearGradientBrush>
+                        </Button.Background>
+                        <Button.Foreground>
+                            <SolidColorBrush Opacity="0.9" Color="White" />
+                        </Button.Foreground>
+                    </Button>
+                    <Button
+                        x:Name="ButtonEditUsers"
+                        Grid.Row="0"
+                        Width="150"
+                        Height="40"
+                        Margin="0,0,360,0"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Center"
+                        pu:ButtonHelper.ClickCoverOpacity="1"
+                        pu:ButtonHelper.ClickStyle="Sink"
+                        pu:ButtonHelper.HoverBrush="#FF333435"
+                        BorderBrush="#FF3C3C3C"
+                        BorderThickness="1.5"
+                        Click="ButtonEditUsers_Click"
+                        FontFamily="/PageProject;component/FontFamilyFolder/#Roboto Medium"
+                        FontSize="15.5"
+                        ToolTip="Изменить ">
+                        <StackPanel
+                            Width="150"
+                            Height="38"
+                            Opacity="0.9"
+                            Orientation="Horizontal">
+                            <materialDesign:PackIcon
+                                Width="27"
+                                Height="40"
+                                Margin="3,0,0,0"
+                                HorizontalAlignment="Left"
+                                Kind="Edit" />
+                            <Label
+                                Margin="8,0,0,0"
+                                HorizontalAlignment="Center"
+                                VerticalContentAlignment="Center"
+                                Content="Изменить"
+                                Foreground="White" />
+                        </StackPanel>
+                        <Button.Background>
+                            <LinearGradientBrush MappingMode="Absolute" Opacity="0.7" StartPoint="300,100" EndPoint="100,100">
+                                <GradientStop Color="Transparent" />
+                                <GradientStop Offset="1" Color="Transparent" />
+                            </LinearGradientBrush>
+                        </Button.Background>
+                        <Button.Foreground>
+                            <SolidColorBrush Opacity="0.9" Color="White" />
+                        </Button.Foreground>
+                    </Button>
+                    <DataGrid
+                        x:Name="DataGridEquipment"
+                        Grid.Row="2"
+                        Grid.ColumnSpan="2"
+                        Width="AUTO"
+                        Height="auto"
+                        Silver:DataGridHelper.ColumnHorizontalContentAlignment="Center"
+                        Silver:DataGridHelper.ColumnVerticalContentAlignment="Center"
+                        Silver:DataGridHelper.HeaderBackground="Transparent"
+                        Silver:DataGridHelper.HeaderForeground="White"
+                        Silver:DataGridHelper.ResizeThumbBrush="#FF3C3C3C"
+                        Silver:DataGridHelper.SelectedBackground="#FF333435"
+                        AutoGenerateColumns="False"
+                        Background="Transparent"
+                        BorderBrush="#FF3C3C3C"
+                        BorderThickness="2"
+                        FontFamily="/APM;component/ResourcesFolder/FontFamily/#Roboto"
+                        Foreground="Transparent"
+                        HorizontalGridLinesBrush="#FF3C3C3C"
+                        IsReadOnly="True"
+                        Opacity="1"
+                        RowBackground="Transparent"
+                        VerticalGridLinesBrush="#FF3C3C3C">
+                        <DataGrid.Columns>
+
+                            <DataGridTemplateColumn Width="50" Header="№">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock
+                                            FontFamily="/Project;component/ResourcesFolder/FontFamily/#Roboto Light"
+                                            Foreground="White"
+                                            
+                                            Opacity="0.7"
+                                            Text="{Binding IdEquipment}" />
+                                        <!--  Text="{Binding LoginUsers, StringFormat=Пароль\{0\}}" />  -->
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTemplateColumn Width="*" Header="Серия оборудования">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock
+                                            FontFamily="/Project;component/ResourcesFolder/FontFamily/#Roboto Light"
+                                            Foreground="White"
+                                            
+                                            Opacity="0.7"
+                                            Text="{Binding SeriaEquipment}" />
+                                        <!--  Text="{Binding LoginUsers, StringFormat=Пароль\{0\}}" />  -->
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTemplateColumn Width="*" Header="Модель">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock
+                                            FontFamily="/Project;component/ResourcesFolder/FontFamily/#Roboto Light"
+                                            Foreground="White"
+                                            Opacity="0.7"
+                                            Text="{Binding NameModel}" />
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTemplateColumn Width="*" Header="Производитель">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock
+                                            FontFamily="/Project;component/ResourcesFolder/FontFamily/#Roboto Light"
+                                            Foreground="White"
+                                            Opacity="0.7"
+                                            Text="{Binding Manufacturer.NameManufacturer}" />
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+
+                            <DataGridTemplateColumn Width="*" Header="Тип оборудования">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock
+                                            FontFamily="/Project;component/ResourcesFolder/FontFamily/#Roboto Light"
+                                            Foreground="White"
+                                            Opacity="0.7"
+                                            Text="{Binding TypeEquipment.NameEquipment}" />
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+
+
+
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <ComboBox
+                        x:Name="ComboBoxE"
+                        Grid.Row="1"
+                        Width="300"
+                        Height="40"
+                        Padding="15,0,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center"
+                        HorizontalContentAlignment="Left"
+                        VerticalContentAlignment="Center"
+                        pu:ComboBoxHelper.HoverBackground="#FF3C3C3C"
+                        pu:ComboBoxHelper.Icon="&#xF002;"
+                        pu:ComboBoxHelper.SelectedBackground="#FF333435"
+                        pu:ComboBoxHelper.ShadowColor="#B5B5B5"
+                        pu:ComboBoxHelper.Watermark="Выберите тип оборудования"
+                        pu:IconHelper.Foreground="#ADAEAE"
+                        Background="#FF272727"
+                        BorderBrush="#FF3C3C3C"
+                        DisplayMemberPath="NameEquipment"
+                        FontFamily="/Project;component/ResourcesFolder/FontFamily/#Roboto Light"
+                        Foreground="White"
+                        Opacity="2"
+                        SelectedItem="{Binding TypeEquipment}" />
+                    <Button
+                        x:Name="ButtonFilteringUsers"
+                        Grid.Row="1"
+                        Width="150"
+                        Height="40"
+                        Margin="330,0,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center"
+                        pu:ButtonHelper.ClickCoverOpacity="1"
+                        pu:ButtonHelper.ClickStyle="Sink"
+                        pu:ButtonHelper.HoverBrush="#FF333435"
+                        BorderBrush="#FF3C3C3C"
+                        BorderThickness="1.5"
+                        Click="ButtonFiltering_Click"
+                        Content="Фильтрировать"
+                        FontFamily="/PageProject;component/FontFamilyFolder/#Roboto Medium"
+                        FontSize="15.5"
+                        ToolTip="Отфильтровать">
+                        <Button.Background>
+                            <LinearGradientBrush MappingMode="Absolute" Opacity="0.7" StartPoint="300,100" EndPoint="100,100">
+                                <GradientStop Color="Transparent" />
+                                <GradientStop Offset="1" Color="Transparent" />
+                            </LinearGradientBrush>
+                        </Button.Background>
+                        <Button.Foreground>
+                            <SolidColorBrush Opacity="0.9" Color="White" />
+                        </Button.Foreground>
+                    </Button>
+                </Grid>
+            </TabItem>
+        </TabControl>
+
+    </Grid>
+</Page>
